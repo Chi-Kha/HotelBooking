@@ -78,7 +78,11 @@
                 <p>Single bed</p>
                 <p>15m<sup>2</sup></p>
                 <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
-                <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+                <a href="room.jsp" style="color: white">
+                    <button class="w3-button w3-block w3-black w3-margin-bottom">
+                        Choose Room
+                    </button>
+                </a>
             </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -89,7 +93,11 @@
                 <p>Queen-size bed</p>
                 <p>25m<sup>2</sup></p>
                 <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>
-                <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+                <a href="room.jsp" style="color: white">
+                    <button class="w3-button w3-block w3-black w3-margin-bottom">
+                        Choose Room
+                    </button>
+                </a>
             </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -100,7 +108,11 @@
                 <p>King-size bed</p>
                 <p>40m<sup>2</sup></p>
                 <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
-                <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+                <a href="room.jsp" style="color: white">
+                    <button class="w3-button w3-block w3-black w3-margin-bottom">
+                        Choose Room
+                    </button>
+                </a>
             </div>
         </div>
     </div>
@@ -163,6 +175,34 @@
         var marker = new google.maps.Marker({position: myCenter});
         marker.setMap(map);
     }
+</script>
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 <!--

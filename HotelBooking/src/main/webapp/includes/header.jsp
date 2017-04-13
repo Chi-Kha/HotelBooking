@@ -27,7 +27,8 @@
     <body class="w3-light-grey">
 
         <!-- Navigation Bar -->
-        <nav  class="navbar navbar-inverse navbar-fixed-top">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,16 +36,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="#myPage">Logo</a>
+                    <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" class="w3-bar-item w3-button w3-red w3-mobile">Home</a></li>
-                        <li><a href="#rooms" class="w3-bar-item w3-button w3-mobile">Rooms</a></li>
-                        <li><a href="#about" class="w3-bar-item w3-button w3-mobile">About</a></li>
-                        <li><a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a></li>
-                        <li><a href="#contact" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Book Now</a></li>
-                    </ul>
+                <div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.jsp" >Home</a></li>
+                            <li><a href="index.jsp#rooms" >Rooms</a></li>
+                            <li><a href="index.jsp#about" >About</a></li>
+                            <li><a href="index.jsp#contact" >Contact</a></li>
+                            <li><a href="index.jsp#contact" >Book Now</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </nav>      
+        
