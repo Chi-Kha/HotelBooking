@@ -61,7 +61,6 @@
           <img src="Image/classic1.jpg" alt="classic1" style="width: 100%;height: 450px">
         <div class="carousel-caption">
           <h3>Living Room</h3>
-          
         </div>
       </div>
 
@@ -69,7 +68,6 @@
         <img src="Image/classic2.jpg" alt="classic2" style="width: 100%;height: 450px">
         <div class="carousel-caption">
           <h3>Dining Room</h3>
-          
         </div>
       </div>
     
@@ -77,7 +75,6 @@
         <img src="Image/classic3.jpg" alt="classic3" style="width: 100%;height: 450px">
         <div class="carousel-caption">
           <h3>Bedroom</h3>
-          
         </div>
       </div>
 
