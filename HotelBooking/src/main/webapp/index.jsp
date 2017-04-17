@@ -1,18 +1,19 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <jsp:include page="includes/header.jsp"/>
 
 <!-- Header -->
 <header class="w3-display-container w3-content" style="max-width:1500px;">
-    <img src="Image/banner3.jpg" alt=""/>
-
+    <img src="/HotelBooking/resources/Image/banner3.jpg" alt=""/>
+    <img src="resources/image/banner3.jpg" alt=""/>
     <div class="w3-display-left w3-padding w3-col l6 m8">
         <div class="w3-container w3-red">
             <h1 class="w3-tangerine"><i class="fa fa-bed w3-margin-right"></i>Hotel Name</h1>
         </div>
         <div class="w3-container w3-white w3-padding-16">
-            <form action="/action_page.php" target="_blank">
+            <form action="#" target="_blank">
                 <div class="w3-row-padding" style="margin:0 -16px;">
                     <div class="w3-half w3-margin-bottom">
                         <label><i class="fa fa-calendar-o"></i> Check In</label>
@@ -70,11 +71,12 @@
     </div>
 
     <div class="w3-row-padding w3-padding-16">
+        <c:forEach var="room" items="${roomList}">
         <div class="w3-third w3-margin-bottom">
             <img src="Image/classicRoom.jpg" alt="Norway" style="width:100%; height: 300px">
             <div class="w3-container w3-white">
-                <h3>Classic Room</h3>
-                <h6 class="w3-opacity">From $99</h6>
+                <h3>${room.roomName}</h3>
+                <h6 class="w3-opacity">Price : ${room.price}</h6>
                 <p>Single bed</p>
                 <p>15m<sup>2</sup></p>
                 <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
@@ -85,6 +87,7 @@
                 </a>
             </div>
         </div>
+        </c:forEach>
         <div class="w3-third w3-margin-bottom">
             <img src="Image/executiveRoom.jpg" alt="Norway" style="width:100%; height: 300px">
             <div class="w3-container w3-white">
