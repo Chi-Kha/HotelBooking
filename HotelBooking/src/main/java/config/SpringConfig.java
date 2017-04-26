@@ -23,7 +23,7 @@ public class SpringConfig {
         dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         dataSource.setUrl("jdbc:sqlserver://localhost:1433;DatabaseName=Hotel");
         dataSource.setUsername("sa");
-        dataSource.setPassword("Abc123@@");
+        dataSource.setPassword("wjnbo1992");//Abc123@@
         return dataSource;
     }
     @Bean

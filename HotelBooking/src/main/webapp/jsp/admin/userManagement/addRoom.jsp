@@ -1,8 +1,4 @@
-<%-- 
-    Document   : book
-    Created on : Mar 23, 2017, 3:49:27 PM
-    Author     : test
---%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="mvc" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

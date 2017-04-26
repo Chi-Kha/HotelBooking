@@ -42,10 +42,11 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/HotelBookingGIT" >Home</a></li>
-                            <li><a href="/HotelBookingGIT/#rooms" >Rooms</a></li>
+                            <li><a href="#rooms" >Rooms</a></li>
                             <li><a href="${pageContext.request.contextPath}/promotion" >Promotion</a></li>
-                            <li><a href="/HotelBookingGIT/#about" >About</a></li>
-                            <li><a href="/HotelBookingGIT/#contact" >Contact</a></li>
+                            <li><a href="#about" >About</a></li>
+                            <li><a href="#contact" >Contact</a></li>
+                            <li><a href="${pageContext.request.contextPath}/checkOut">Check out</a></li>
                             <li>
                                 <form action="${pageContext.request.contextPath}/searchBooking">
                                     <input class="w3-input w3-border" type="text" name="bookingCode">

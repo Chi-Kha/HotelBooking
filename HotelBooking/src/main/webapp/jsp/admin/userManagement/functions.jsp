@@ -19,5 +19,12 @@
         <p>----------</p>
         <h3><a href="${pageContext.request.contextPath}/admin/addPromotion">Add Promotion</a></h3>
         <h3><a href="${pageContext.request.contextPath}/admin/promotion">View Promotion</a></h3>
+        
+        <p>----------</p>
+        <h3><a href="${pageContext.request.contextPath}/admin/addBooking">Add Booking</a></h3>
+        <h3><a href="${pageContext.request.contextPath}/admin/booking">View Booking</a></h3>
+        <p>----------</p>
+        <h3><a href="${pageContext.request.contextPath}/admin/addBookingDetail">Add Booking Detail</a></h3>
+        <h3><a href="${pageContext.request.contextPath}/admin/bookingDetail">View Booking Detail</a></h3>
     </body>
 </html>

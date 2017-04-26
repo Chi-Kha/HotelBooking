@@ -1,5 +1,7 @@
 package entity;
 
+import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -29,17 +32,19 @@ public class RoomEntity {
     private double price;
     private String images;
     
-    
-    
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER) //cascade : list BookDetailsEntity theo table Book
     @PrimaryKeyJoinColumn
     private RoomServicesEntity roomServices;
+    
+    @OneToMany(mappedBy = "room",fetch = FetchType.EAGER)
+    List<BookingDetailEntity> bookingDetailList;
     
     public RoomEntity(){
         
     }
 
-    public RoomEntity(String roomName, int roomTypeID, RoomTypeEntity roomType, boolean status, double price, String images) {
+    public RoomEntity(String roomName, int roomTypeID, RoomTypeEntity roomType,
+            boolean status, double price, String images) {
         this.roomName = roomName;
         this.roomType = roomType;
         this.status = status;
@@ -102,5 +107,26 @@ public class RoomEntity {
     public void setRoomType(RoomTypeEntity roomType) {
         this.roomType = roomType;
     }
+
+    public List<BookingDetailEntity> getBookingDetailList() {
+        return bookingDetailList;
+    }
+
+    public void setBookingDetailList(List<BookingDetailEntity> bookingDetailList) {
+        this.bookingDetailList = bookingDetailList;
+    }
     
+    public boolean checkAvailable(LocalDate startDate, LocalDate endDate){
+        List<BookingDetailEntity> bookingDetailList = this.getBookingDetailList();
+        boolean available = true;
+        for(BookingDetailEntity bookingDetail: bookingDetailList){
+            if(startDate.isAfter(bookingDetail.getStartDate()) && startDate.isBefore(bookingDetail.getEndDate()) ||
+                    endDate.isAfter(bookingDetail.getStartDate()) && endDate.isBefore(bookingDetail.getEndDate())){
+                available = false;
+            }else {
+                available = true;
+            }
+        }
+        return available;
+    }
 }

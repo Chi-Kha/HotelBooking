@@ -9,7 +9,7 @@
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 ">
     <context:annotation-config/>
-    <context:component-scan base-package="controller,repository,config" />
+    <context:component-scan base-package="controller,repository,config,component,util" />
     
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/jsp/" />

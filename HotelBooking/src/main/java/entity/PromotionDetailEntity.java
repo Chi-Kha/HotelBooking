@@ -26,21 +26,30 @@ public class PromotionDetailEntity implements Serializable{
     private LocalDate startDate;
     private LocalDate endDate;
     
-    private double discount;
-    
     @ManyToOne
     @JoinColumn(name = "promotionID", insertable = false, updatable = false)
     private PromotionEntity promotion;
+    
+    @ManyToOne
+    @JoinColumn(name = "roomID", insertable = false, updatable = false)
+    private RoomEntity room;
 
     public PromotionDetailEntity() {
     }
 
-    public PromotionDetailEntity(int promotionID, int roomID, LocalDate startDate, LocalDate endDate, double discount) {
+    public PromotionDetailEntity(int promotionID, int roomID, LocalDate startDate, LocalDate endDate) {
         this.promotionID = promotionID;
         this.roomID = roomID;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.discount = discount;
+    }
+
+    public RoomEntity getRoom() {
+        return room;
+    }
+
+    public void setRoom(RoomEntity room) {
+        this.room = room;
     }
 
     public int getPromotionDetailID() {
@@ -81,14 +90,6 @@ public class PromotionDetailEntity implements Serializable{
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
     }
 
     public PromotionEntity getPromotion() {

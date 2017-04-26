@@ -19,6 +19,7 @@ public class PromotionEntity {
     
     private String description;
     private String images;
+    private float discount;
     
     @OneToMany(mappedBy = "promotion",fetch = FetchType.EAGER)
     List<PromotionDetailEntity> promotionDetailList;
@@ -27,9 +28,18 @@ public class PromotionEntity {
         
     }
     
-    public PromotionEntity(String description, String images){
+    public PromotionEntity(String description, String images, Float discount){
         this.description = description;
         this.images = images;
+        this.discount = discount;
+    }
+
+    public float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(float discount) {
+        this.discount = discount;
     }
 
     public String getImages() {
@@ -63,6 +73,7 @@ public class PromotionEntity {
     public void setPromotionDetailList(List<PromotionDetailEntity> promotionDetailList) {
         this.promotionDetailList = promotionDetailList;
     }
+    
     
     
 }
